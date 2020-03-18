@@ -15,6 +15,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 
+import br.eti.deividferreira.pontointeligente.api.domain.PontoInteligenteAbstractTests;
 import br.eti.deividferreira.pontointeligente.api.domain.entities.Empresa;
 import br.eti.deividferreira.pontointeligente.api.domain.entities.Funcionario;
 import br.eti.deividferreira.pontointeligente.api.domain.entities.Lancamento;
@@ -24,7 +25,7 @@ import br.eti.deividferreira.pontointeligente.api.domain.entities.Lancamento;
  *
  */
 @SpringBootTest
-public class LancamentoRepositoryTest extends PontoInteligenteRepositoriesTests {
+public class LancamentoRepositoryTest extends PontoInteligenteAbstractTests {
 
    @Before
    public void setUp() throws NoSuchAlgorithmException {

@@ -8,6 +8,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import br.eti.deividferreira.pontointeligente.api.domain.PontoInteligenteAbstractTests;
 import br.eti.deividferreira.pontointeligente.api.domain.entities.Empresa;
 import br.eti.deividferreira.pontointeligente.api.domain.entities.Funcionario;
 
@@ -16,7 +17,7 @@ import br.eti.deividferreira.pontointeligente.api.domain.entities.Funcionario;
  *
  */
 @SpringBootTest
-public class FuncionarioRepositoryTest extends PontoInteligenteRepositoriesTests {
+public class FuncionarioRepositoryTest extends PontoInteligenteAbstractTests {
 
    @Before
    public void setUp() throws Exception {

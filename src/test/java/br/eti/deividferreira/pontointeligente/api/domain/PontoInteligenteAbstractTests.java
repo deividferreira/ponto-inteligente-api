@@ -1,4 +1,4 @@
-package br.eti.deividferreira.pontointeligente.api.domain.repositories;
+package br.eti.deividferreira.pontointeligente.api.domain;
 
 import java.security.NoSuchAlgorithmException;
 import java.time.LocalDateTime;
@@ -20,7 +20,7 @@ import br.eti.deividferreira.pontointeligente.api.utils.PasswordUtils;
 
 @RunWith(SpringRunner.class)
 @ActiveProfiles("test")
-abstract class PontoInteligenteRepositoriesTests {
+public abstract class PontoInteligenteAbstractTests {
    protected static final String EMAIL = "email@email.com";
    protected static final String OTHER_EMAIL = "email@other-email.com";
    protected static final String CPF = "24291173474";
