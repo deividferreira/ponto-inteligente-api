@@ -35,7 +35,7 @@ public interface FuncionarioService {
     * @param email
     * @return Optional<Funcionario>
     */
-   Optional<Funcionario> buscaPorEmail(String email);
+   Optional<Funcionario> buscarPorEmail(String email);
 
    /**
     * retorna um funcionario dado um id

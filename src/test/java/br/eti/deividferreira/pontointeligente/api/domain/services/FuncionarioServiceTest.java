@@ -61,14 +61,14 @@ public class FuncionarioServiceTest extends PontoInteligenteAbstractTests {
 
    @Test
    public void testBuscarFuncionarioPorEmail() {
-      Optional<Funcionario> funcionario = this.service.buscaPorEmail(EMAIL);
+      Optional<Funcionario> funcionario = this.service.buscarPorEmail(EMAIL);
 
       assertTrue(funcionario.isPresent());
    }
 
    @Test
    public void testBuscarFuncionarioPorCpf() {
-      Optional<Funcionario> funcionario = this.service.buscaPorEmail(CPF);
+      Optional<Funcionario> funcionario = this.service.buscarPorEmail(CPF);
 
       assertTrue(funcionario.isPresent());
    }

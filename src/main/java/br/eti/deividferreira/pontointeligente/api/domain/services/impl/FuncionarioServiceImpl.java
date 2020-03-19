@@ -38,7 +38,7 @@ public class FuncionarioServiceImpl implements FuncionarioService {
    }
 
    @Override
-   public Optional<Funcionario> buscaPorEmail(String email) {
+   public Optional<Funcionario> buscarPorEmail(String email) {
       log.info("buscando o funcionario pelo email: {}", email);
       return this.funcionarioRepository.findByEmail(email);
    }
