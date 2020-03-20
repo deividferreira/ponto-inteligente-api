@@ -3,7 +3,6 @@
  */
 package br.eti.deividferreira.pontointeligente.api.web.controller;
 
-import java.security.NoSuchAlgorithmException;
 import java.util.Optional;
 
 import javax.validation.Valid;
@@ -55,7 +54,6 @@ public class CadastroPFController {
     * @param cadastroPFDto
     * @param result
     * @return
-    * @throws NoSuchAlgorithmException
     */
    @PostMapping
    public ResponseEntity<Response<CadastroPFDTO>> cadastrar(

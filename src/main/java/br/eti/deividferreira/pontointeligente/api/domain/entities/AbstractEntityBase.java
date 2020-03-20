@@ -16,6 +16,7 @@ import javax.persistence.PreUpdate;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.ToString;
 
 /**
@@ -30,6 +31,7 @@ public abstract class AbstractEntityBase implements IEntityBase<Long> {
 
    @Id
    @Getter
+   @Setter
    @GeneratedValue(strategy = GenerationType.AUTO)
    private Long id;
 
