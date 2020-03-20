@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.eti.deividferreira.pontointeligente.api.domain.entities.Empresa;
+import br.eti.deividferreira.pontointeligente.api.domain.entities.Funcionario;
 import br.eti.deividferreira.pontointeligente.api.domain.repositories.EmpresaRepository;
 import br.eti.deividferreira.pontointeligente.api.domain.services.EmpresaService;
 
@@ -35,6 +36,12 @@ public class EmpresaServiceImpl implements EmpresaService {
    public Empresa persistir(Empresa empresa) {
       log.info("Inserindo uma nova empresa {}", empresa);
       return this.empresaRepository.save(empresa);
+   }
+
+   @Override
+   public Optional<Empresa> buscarPorFuncionario(Funcionario funcionario) {
+      log.info("Buscando a empresa do funcionario: {}", funcionario);
+      return this.empresaRepository.findByFuncionarios(funcionario);
    }
 
 }

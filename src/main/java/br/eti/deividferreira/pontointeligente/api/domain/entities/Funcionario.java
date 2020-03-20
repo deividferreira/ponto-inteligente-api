@@ -53,7 +53,6 @@ public class Funcionario extends AbstractEntityBase {
    @Setter
    @Column(name = "qtd_horas_trabalho_dia", nullable = true)
    private Float qtdHorasTrabalhoDia;
-   @Getter
    @Setter
    @Column(name = "qtd_horas_almoco", nullable = true)
    private Float qtdHorasAlmoco;
@@ -80,6 +79,11 @@ public class Funcionario extends AbstractEntityBase {
    @Transient
    public Optional<BigDecimal> getValorHora() {
       return Optional.ofNullable(this.valorHora);
+   }
+
+   @Transient
+   public Optional<Float> getQtdHorasAlmoco() {
+      return Optional.ofNullable(this.qtdHorasAlmoco);
    }
 
 }
