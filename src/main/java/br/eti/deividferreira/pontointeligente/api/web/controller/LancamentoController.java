@@ -11,6 +11,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort.Direction;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -160,6 +161,7 @@ public class LancamentoController {
    }
 
    @DeleteMapping(value = "/{id}")
+   @PreAuthorize("hasAnyRole('ADMIN')")
    public ResponseEntity<Response<String>> remover(@PathVariable("id") Long id) {
       log.info("Removendo lancamento {}", id);
       Response<String> response = new Response<>();
@@ -168,7 +170,7 @@ public class LancamentoController {
       if (!lancamento.isPresent()) {
          log.info("Erro ao remover devido ao lancamenti ID: {} ser invalido", id);
          response.getErrors()
-               .add("Erro ao remover lancamento. Registro não encontrado para o id {}" + id);
+               .add("Erro ao remover lancamento. Registro não encontrado para o id " + id);
          return ResponseEntity.badRequest().body(response);
       }
 
