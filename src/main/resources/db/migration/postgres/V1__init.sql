@@ -19,7 +19,7 @@ ALTER SEQUENCE hibernate_sequence
 
 CREATE TABLE empresas
 (
-    id bigint NOT NULL,
+    id serial NOT NULL,
     data_criacao timestamp without time zone NOT NULL,
     data_atualizacao timestamp without time zone,
     cnpj character varying(255) COLLATE pg_catalog."default" NOT NULL,
@@ -43,7 +43,7 @@ ALTER TABLE empresas
 
 CREATE TABLE funcionarios
 (
-    id bigint NOT NULL,
+    id serial NOT NULL,
     data_criacao timestamp without time zone NOT NULL,
     data_atualizacao timestamp without time zone,
     cpf character varying(255) COLLATE pg_catalog."default" NOT NULL,
@@ -77,7 +77,7 @@ ALTER TABLE funcionarios
 
 CREATE TABLE lancamentos
 (
-    id bigint NOT NULL,
+    id serial NOT NULL,
     data_criacao timestamp without time zone NOT NULL,
     data_atualizacao timestamp without time zone,
     data timestamp without time zone NOT NULL,
