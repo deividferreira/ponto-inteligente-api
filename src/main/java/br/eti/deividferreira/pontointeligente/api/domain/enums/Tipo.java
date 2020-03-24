@@ -13,5 +13,11 @@ public enum Tipo {
    INICIO_ALMOCO,
    TERMINO_ALMOCO,
    INICIO_PAUSA,
-   TERMINO_PAUSA
+   TERMINO_PAUSA;
+   
+   
+   @Override
+   public String toString() {
+      return this.name();
+   }
 }
