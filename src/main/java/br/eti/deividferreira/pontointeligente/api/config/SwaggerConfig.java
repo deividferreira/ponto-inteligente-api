@@ -3,7 +3,6 @@
  */
 package br.eti.deividferreira.pontointeligente.api.config;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
@@ -29,11 +28,18 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @Profile("dev")
 @EnableSwagger2
 public class SwaggerConfig {
-
-   @Autowired
+   
    private JwtTokenUtil jwtTokenUtil;
-
    private UserDetailsService userDetailsService;
+   
+   /**
+    * @param jwtTokenUtil
+    * @param userDetailsService
+    */
+   public SwaggerConfig(JwtTokenUtil jwtTokenUtil, UserDetailsService userDetailsService) {
+      this.jwtTokenUtil = jwtTokenUtil;
+      this.userDetailsService = userDetailsService;
+   }
 
    @Bean
    public Docket api() {
@@ -60,6 +66,7 @@ public class SwaggerConfig {
          token = this.jwtTokenUtil.obterToken(userDetails);
       } catch (Exception e) {
          token = "";
+         e.printStackTrace();
       }
       return new SecurityConfiguration(null, null, null, null, "Bearer " + token,
             ApiKeyVehicle.HEADER, "Authorization", ",");
