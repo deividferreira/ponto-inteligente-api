@@ -9,9 +9,6 @@ CREATE SEQUENCE hibernate_sequence
     MAXVALUE 9223372036854775807
     CACHE 1;
 
-ALTER SEQUENCE hibernate_sequence
-    OWNER TO postgres;
-
 
 -- Table: empresas
 
@@ -30,9 +27,6 @@ WITH (
     OIDS = FALSE
 )
 TABLESPACE pg_default;
-
-ALTER TABLE empresas
-    OWNER to postgres;
     
     
     
@@ -65,9 +59,6 @@ WITH (
     OIDS = FALSE
 )
 TABLESPACE pg_default;
-
-ALTER TABLE funcionarios
-    OWNER to postgres;
     
     
     
@@ -95,6 +86,3 @@ WITH (
     OIDS = FALSE
 )
 TABLESPACE pg_default;
-
-ALTER TABLE lancamentos
-    OWNER to postgres;
